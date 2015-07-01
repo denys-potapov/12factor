@@ -39,6 +39,13 @@
 		<div class="reveal">
 
 			<div class="slides">
+				
+				<!-- 
+					Intro
+
+					for pdf export add ?print-pdf to query string
+				-->
+				
 				<section>
 					<img src="img/logo.png" style="border: none; box-shadow: none;">
 					<h3>12-факторные приложения</h3>
@@ -51,6 +58,26 @@
 					<h2>The Twelve-Factor App</h2>
 					<h4><a href="http://12factor.net/">12factor.net</a></h4>
 					<h4><a href="http://bit.ly/12factor-ua">bit.ly/12factor-ua</a></h4>
+				</section>
+
+				<section>
+					<h3>12-факторные приложения</h3>
+					<h4>современное веб приложение от heroku</h4>
+					<ul>
+						<li>подключение новых разработчиков к проекту</li>
+						<li>переносимость между средами выполнения</li>
+						<li>непрерывное развертывание</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>12-факторные приложения</h3>
+					<h4>современное веб приложение от heroku</h4>
+					<ul>
+						<li>работа на современных облачных платформах/li>
+						<li>масштабироваться без изменений</li>
+						<li>deis, fortrabbit, docker </li>
+					</ul>
 				</section>
 
 				<!-- 
@@ -77,7 +104,6 @@
 					<h3>I. Один репозиторий — множество развертываний</h3>
 					<img src="img/codebase.png" style="border:0;">
 				</section>
-
 
 				<!-- 
 					II. Зависимости
@@ -288,20 +314,33 @@ ENV["MY_CONFIG"]
 				</section>
 
 				<section>
-					<h1></h1>
-					<h3></h3>
-					<p></p>
+					<h3>VII. Приложение не зависит от сервера</h3>
+					<p>Приложение в контейнере веб-сервера</p>
+					<ul>
+						<li>PHP в Apache HTTPD</li>
+						<li>Java в Tomcat</li>
+					</ul>	
 				</section>
 
 				<section>
-					<h1></h1>
-					<h3></h3>
-					<p></p>
+					<h3>VII. Приложение не зависит от сервера</h3>
+					<p>Приложение 12 факторов экспортирует HTTP сервис</p>
+					<ul>
+						<li>объявление зависимости:
+							<ul>
+								<li>Tornado в Python</li>
+								<li>Thin в Ruby</li>
+								<li>Jetty в Java</li>
+								<li>ReactPHP в PHP</li>
+							</ul>	
+						</li>
+						<li>может выступать сторонней службой</li>
+					</ul>	
 				</section>
 
 
 				<!-- 
-					VIII. Параллелизм
+					VIII. Конкурентность
 				-->
 				
 				<section>
@@ -316,9 +355,24 @@ ENV["MY_CONFIG"]
 				</section>
 
 				<section>
-					<h1></h1>
-					<h3></h3>
-					<p></p>
+					<h3>VIII. Масштаб с помощью процессов</h3>
+					<ul>
+						<li>процессы — сущности первого класса</li>
+						<li>различная нагрузка — разные типы процессов</li>
+						<li>отсутствие разделяем данных при мастштабе</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>VIII. Масштаб с помощью процессов</h3>
+					<h4>Выполняйте, а не запускайте, процессы<br>
+					<small>Run not start</small>
+					</h4>
+					<ul>
+						<li>контроль выполнения</li>
+						<li>маршрутизация вывода</li>
+						<li>реагирование на падение</li>
+					</ul>						
 				</section>
 
 				<!-- 
@@ -332,15 +386,21 @@ ENV["MY_CONFIG"]
 				</section>
 				
 				<section>
-					<h1></h1>
-					<h3></h3>
-					<p></p>
+					<h3>IX. Быстрый запуск и корректное завершение</h3>
+					<ul>
+						<li>минимальное время запуска</li>
+						<li>корректное завершение</li>
+						<li>устойчивые к падению</li>
+					</ul>	
 				</section>
 
 				<section>
-					<h1></h1>
-					<h3></h3>
-					<p></p>
+					<h3>IX. Быстрый запуск и корректное завершение</h3>
+					<ul>
+						<li>короткие HTTP запросы</li>
+						<li>фоновые задачи возвращать в очередь</li>
+						<li>повторная входимость (транзакции)</li>
+					</ul>	
 				</section>
 
 				<!-- 
